@@ -17,7 +17,7 @@ export default function Home() {
               JH
             </div>
             <div>
-              <span className="text-lg font-bold tracking-tight text-[var(--text-highlight)]">
+              <span className="text-lg font-bold tracking-tight text-teal-400">
                 김종환
               </span>
               <span className="point-text point-border ml-2 text-xs font-semibold px-2.5 py-0.5 rounded-full border bg-blue-900/30">
@@ -58,7 +58,7 @@ export default function Home() {
           {/* Heading with Point Color on Important Part (두 줄로 구성) */}
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-[var(--text-highlight)] leading-tight">
             안녕하세요,<br />
-            <span className="point-text inline-block mt-1 sm:mt-2">김종환</span>입니다
+            <span className="text-teal-400 inline-block mt-1 sm:mt-2">김종환</span>입니다
           </h1>
 
           {/* Profile Photo (핑크뮬리 프로필 사진) */}
