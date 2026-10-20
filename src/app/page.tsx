@@ -1,17 +1,18 @@
 import Image from "next/image";
 import ColorSwitcher from "./ColorSwitcher";
+import InquirySection from "./InquirySection";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex flex-col justify-between overflow-hidden">
+    <div className="relative min-h-screen flex flex-col justify-between overflow-hidden scroll-smooth">
       {/* Background Decorative Ambient Glows */}
       <div className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-blue-600/20 blur-3xl" />
       <div className="pointer-events-none absolute top-1/3 -right-40 h-[450px] w-[450px] rounded-full bg-blue-500/15 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-32 left-1/3 h-96 w-96 rounded-full bg-indigo-700/20 blur-3xl" />
 
       {/* Top Header / Navigation Bar */}
-      <header className="relative z-10 w-full border-b border-blue-400/15 backdrop-blur-md bg-[#0a142c]/75">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 sm:px-10 lg:px-12 py-5">
+      <header className="relative z-10 w-full border-b border-blue-400/15 backdrop-blur-md bg-[#0a142c]/75 sticky top-0">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 sm:px-10 lg:px-12 py-4 sm:py-5">
           <div className="flex items-center gap-3">
             <div className="point-bg flex h-10 w-10 items-center justify-center rounded-xl font-extrabold text-white shadow-md">
               JH
@@ -26,8 +27,19 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Color Switcher (배경 파랑 / 글자 노랑 / 포인트 빨강 실시간 조절) */}
-          <ColorSwitcher />
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Quick Contact Button */}
+            <a
+              href="#contact-section"
+              className="inline-flex items-center gap-1.5 rounded-full border border-blue-400/30 bg-blue-900/40 px-3.5 py-1.5 text-xs font-semibold text-yellow-200 hover:border-yellow-300 hover:bg-blue-800/60 transition-all active:scale-95"
+            >
+              <span>✉️</span>
+              <span>문의하기</span>
+            </a>
+
+            {/* Color Switcher (배경 파랑 / 글자 노랑 / 포인트 빨강 실시간 조절) */}
+            <ColorSwitcher />
+          </div>
         </div>
       </header>
 
@@ -76,10 +88,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Body Text in Clear, High-Contrast Yellow (두 줄로 구성) */}
+          {/* Body Text in Clear, High-Contrast Yellow */}
           <p className="mt-8 sm:mt-10 text-lg sm:text-xl font-normal leading-relaxed sm:leading-loose text-[var(--text-primary)] max-w-2xl px-2">
-            <span className="block">시원하고 깊이 있는 파란색 배경 위에, 또렷하고 가독성 높은 노란색 글자로 구성했습니다.</span>
-            <span className="block mt-1">
+            <span className="block">
               제목과 중요한 핵심 부분에만 <span className="point-text font-bold underline decoration-2 underline-offset-4">붉은색 포인트</span>를 살짝 더해 시선을 집중시켰습니다.
             </span>
           </p>
@@ -134,9 +145,16 @@ export default function Home() {
         </div>
 
         {/* Action Buttons */}
-        <div className="mt-14 sm:mt-16 flex flex-col gap-4 sm:flex-row w-full max-w-md justify-center">
+        <div className="mt-14 sm:mt-16 flex flex-col sm:flex-row gap-3.5 w-full max-w-lg justify-center">
           <a
             className="point-bg flex h-12 items-center justify-center gap-2 rounded-xl font-bold text-white px-7 transition-all duration-300 hover:brightness-110 hover:shadow-lg active:scale-95"
+            href="#contact-section"
+          >
+            <span>✉️</span>
+            문의사항 남기기
+          </a>
+          <a
+            className="flex h-12 items-center justify-center gap-2 rounded-xl border border-blue-400/25 bg-blue-950/50 px-6 font-semibold text-[var(--text-highlight)] backdrop-blur-sm transition-all duration-300 hover:border-yellow-200/50 hover:bg-blue-900/60 active:scale-95"
             href="https://vercel.com/new"
             target="_blank"
             rel="noopener noreferrer"
@@ -152,14 +170,17 @@ export default function Home() {
             지금 배포하기
           </a>
           <a
-            className="flex h-12 items-center justify-center rounded-xl border border-blue-400/25 bg-blue-950/50 px-6 font-semibold text-[var(--text-highlight)] backdrop-blur-sm transition-all duration-300 hover:border-yellow-200/50 hover:bg-blue-900/60 active:scale-95"
+            className="flex h-12 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-950/30 px-5 text-sm font-semibold text-blue-200/80 backdrop-blur-sm transition-all duration-300 hover:text-white hover:bg-blue-900/40 active:scale-95"
             href="https://nextjs.org/docs"
             target="_blank"
             rel="noopener noreferrer"
           >
-            공식 문서 둘러보기
+            공식 문서
           </a>
         </div>
+
+        {/* Inquiry / Contact Form Section */}
+        <InquirySection />
       </main>
 
       {/* Footer */}
